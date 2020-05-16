@@ -1,0 +1,33 @@
+.input-range__track--active {
+    background: #2874f0;
+}
+
+.input-range__slider {
+    background: #fff;
+    border-color: #2874f0;
+    width: 1.1rem;
+    height: 1.1rem;
+    margin-left: -0.4rem;
+}
+.input-range__track--background {
+    background: #89a0ee;
+}
+.button-filter {
+    padding: 9px 25px;
+    outline: none;
+    border-radius: 26px;
+    font-size: 18px;
+    margin-top: 10px;
+    cursor: pointer;
+    background: #4269ea;
+    color: #fff;
+}
+
+.input-range {
+    margin-top: 66px;
+}
+
+.filter-header {
+    float: left;
+    margin-top: 10px;
+}
