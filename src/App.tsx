@@ -1,31 +1,25 @@
 import React, { useMemo, useState } from "react";
-import styled from "styled-components";
 import "./App.css";
 import { cartData } from "./cart";
 import AllCartcontainer from "./Common/AllCartcontainer/AllCartcontainer";
 import Card from "./Common/Card/Card";
 import Headers from "./Common/Header/Header";
+import Modal from "./Common/Modal/Modal";
+import ModalSort from "./Common/Modal/ModalFilter";
 import SideFilter from "./Common/SideFilter/SideFilter";
 import Sort from "./Common/Sort/Sort";
 import Footer from "./Footer";
 
-const CardContainer = styled.div`
-    display: ;
-`;
 function App() {
     const [addCartData, setAddCardData] = useState<any>([]);
     const [sortBy, setSortBy] = useState("LowToHigh");
     const [handleFilter, setHandleFilter] = useState({ min: 0, max: 200000 });
     const [showHome, setShowHome] = useState(true);
     const [searchQuery, setSearchQuery] = useState("");
+    const [showFilterModal, setShowFilterModal] = useState(false);
+    const [showSortModal, setShowSortModal] = useState(false);
+    const [rangeValue, setRangeValue] = useState<any>({ min: 0, max: 200000 });
 
-    // useEffect(() => {
-    //     fetch("https://api.myjson.com/bins/qzuzi")
-    //         .then(res => res.json())
-    //         .then(result => {
-    //             console.log(result);
-    //         });
-    // }, []);
     const data = useMemo(() => {
         let myData: any = [];
         switch (sortBy) {
@@ -58,6 +52,8 @@ function App() {
                 );
             });
         }
+        setShowSortModal(false);
+        setShowFilterModal(false);
         return myData;
     }, [sortBy, handleFilter, searchQuery]);
 
@@ -71,6 +67,23 @@ function App() {
     };
     return (
         <div className="App">
+            {showFilterModal && (
+                <Modal
+                    title="Filter Options"
+                    setHandleFilter={setHandleFilter}
+                    setShowFilterModal={setShowFilterModal}
+                    setRangeValue={setRangeValue}
+                    rangeValue={rangeValue}
+                />
+            )}
+            {showSortModal && (
+                <ModalSort
+                    setShowSortModal={setShowSortModal}
+                    setSortBy={setSortBy}
+                    sortBy={sortBy}
+                />
+            )}
+
             <div className="header">
                 <div className="header-internal-container">
                     <Headers
@@ -86,16 +99,39 @@ function App() {
                 <div className="internal-container">
                     <div className="filter-container-top">
                         <span className="filter-header">Filter</span>
-                        <SideFilter setHandleFilter={setHandleFilter} />
+                        <SideFilter
+                            setHandleFilter={setHandleFilter}
+                            setShowFilterModal={setShowFilterModal}
+                            setRangeValue={setRangeValue}
+                            rangeValue={rangeValue}
+                        />
                     </div>
                     <div>
                         <div className="sort-by-container">
                             <Sort setSortBy={setSortBy} sortBy={sortBy} />
-                            <div className="sort-by-mobile"></div>
+                            <div className="sort-filter-mobile">
+                                <div>
+                                    <button
+                                        onClick={() => {
+                                            setShowSortModal(true);
+                                        }}
+                                    >
+                                        Sort
+                                    </button>
+                                </div>
+                                <div>
+                                    <button
+                                        onClick={() => {
+                                            setShowFilterModal(true);
+                                        }}
+                                    >
+                                        Filter
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                         <div className="card-container-top-root">
-                            {data &&
-                                data.length &&
+                            {data && data.length > 0 ? (
                                 data.map((dValue: any, dIndex: number) => {
                                     const {
                                         discount = "",
@@ -117,7 +153,10 @@ function App() {
                                             handleAddCart={handleAddCart}
                                         />
                                     );
-                                })}
+                                })
+                            ) : (
+                                <p>No Item in Your Cart</p>
+                            )}
                         </div>
                     </div>
                 </div>

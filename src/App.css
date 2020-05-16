@@ -17,6 +17,23 @@ body {
     grid-gap: 25px;
 }
 
+.sort-filter-mobile {
+    display: none;
+    flex-direction: row;
+    justify-content: space-around;
+    padding: 11px 0;
+    background: #fff;
+    margin-bottom: 11px;
+}
+
+.sort-filter-mobile button {
+    font-size: 19px;
+    background: transparent;
+    border: none;
+    font-weight: 700;
+    cursor: pointer;
+    outline: none;
+}
 @media only screen and (max-width: 800px) {
     .filter-container-top {
         display: none;
@@ -29,9 +46,12 @@ body {
         grid-template-columns: 1fr 1fr 1fr;
         grid-gap: 20px;
     }
+    .sort-filter-mobile {
+        display: flex;
+    }
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 500px) {
     .filter-container-top {
         display: none;
     }
@@ -42,6 +62,9 @@ body {
     .card-container-top-root {
         grid-template-columns: 1fr 1fr;
         grid-gap: 15px;
+    }
+    .sort-filter-mobile {
+        display: flex;
     }
 }
 .footer {
