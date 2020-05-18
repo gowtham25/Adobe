@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/Adobe/static/css/main.8818c29c.chunk.css",
+    "main.js": "/Adobe/static/js/main.7f5cf38b.chunk.js",
+    "main.js.map": "/Adobe/static/js/main.7f5cf38b.chunk.js.map",
+    "runtime-main.js": "/Adobe/static/js/runtime-main.82de47e8.js",
+    "runtime-main.js.map": "/Adobe/static/js/runtime-main.82de47e8.js.map",
+    "static/css/2.60eec0d8.chunk.css": "/Adobe/static/css/2.60eec0d8.chunk.css",
+    "static/js/2.e35e7cfb.chunk.js": "/Adobe/static/js/2.e35e7cfb.chunk.js",
+    "static/js/2.e35e7cfb.chunk.js.map": "/Adobe/static/js/2.e35e7cfb.chunk.js.map",
+    "index.html": "/Adobe/index.html",
+    "precache-manifest.4c581c63c6656ade40c18398fb6434e2.js": "/Adobe/precache-manifest.4c581c63c6656ade40c18398fb6434e2.js",
+    "service-worker.js": "/Adobe/service-worker.js",
+    "static/css/2.60eec0d8.chunk.css.map": "/Adobe/static/css/2.60eec0d8.chunk.css.map",
+    "static/css/main.8818c29c.chunk.css.map": "/Adobe/static/css/main.8818c29c.chunk.css.map",
+    "static/js/2.e35e7cfb.chunk.js.LICENSE.txt": "/Adobe/static/js/2.e35e7cfb.chunk.js.LICENSE.txt",
+    "static/media/cart.png": "/Adobe/static/media/cart.316b1539.png",
+    "static/media/search.png": "/Adobe/static/media/search.cbc92efe.png",
+    "static/media/star.png": "/Adobe/static/media/star.37a38992.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.82de47e8.js",
+    "static/css/2.60eec0d8.chunk.css",
+    "static/js/2.e35e7cfb.chunk.js",
+    "static/css/main.8818c29c.chunk.css",
+    "static/js/main.7f5cf38b.chunk.js"
+  ]
+}
