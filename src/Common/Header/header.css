@@ -44,3 +44,13 @@
         width: 90%;
     }
 }
+.total-item {
+    background: yellow;
+    color: blue;
+    position: absolute;
+    padding: 3px;
+    border-radius: 37px;
+    font-size: 10px;
+    top: 8px;
+    right: 2px;
+}

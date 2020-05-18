@@ -92,6 +92,7 @@ function App() {
                         searchQuery={searchQuery}
                         handleSearch={handleSearch}
                         showHome={showHome}
+                        cartIem={addCartData.length}
                     />
                 </div>
             </div>

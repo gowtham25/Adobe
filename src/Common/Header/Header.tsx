@@ -10,13 +10,15 @@ interface HeaderProps {
     searchQuery: string;
     handleSearch: any;
     showHome: boolean;
+    cartIem: number;
 }
 const Header: React.FC<HeaderProps> = ({
     setShowHome,
     setSearchQuery,
     searchQuery,
     handleSearch,
-    showHome
+    showHome,
+    cartIem
 }) => {
     return (
         <>
@@ -45,12 +47,17 @@ const Header: React.FC<HeaderProps> = ({
                     <img src={Search} alt="Search" className="search-icon" />
                 </button>
                 {showHome && (
-                    <img
-                        src={CartLogo}
-                        alt="Search"
-                        className="cart-icon"
-                        onClick={() => setShowHome(false)}
-                    />
+                    <>
+                        <img
+                            src={CartLogo}
+                            alt="Search"
+                            className="cart-icon"
+                            onClick={() => setShowHome(false)}
+                        />
+                        {cartIem > 0 && (
+                            <span className="total-item">{cartIem}</span>
+                        )}
+                    </>
                 )}
             </div>
         </>
